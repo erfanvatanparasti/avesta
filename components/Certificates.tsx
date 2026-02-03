@@ -1,0 +1,75 @@
+"use client"
+import React from 'react';
+import { useEffect, useState } from "react";
+import Image from "next/image";
+
+import { useDeviceType } from '@/context/useDeviceType';
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+
+export default function Certificates(props: any){  
+    const deviceType = useDeviceType();
+    const [certificates, setCertificates] = useState<any[]>([]);
+    const [current, setCurrent] = useState<number>(0);
+    
+    useEffect(() => {
+      setCertificates([
+        {
+          image: "ISO10002.webp",
+          title: "ISO10002",
+          text: "شرکت اوستا هوش یار مفتخر است که موفق به دریافت گواهینامه بین‌المللی ISO 10002 در حوزه «سیستم مدیریت رسیدگی به شکایات مشتریان» شده است. این دستاورد مهم، نشان‌دهنده تعهد شرکت به ارتقای کیفیت خدمات، ایجاد سازوکاری شفاف برای دریافت و رسیدگی به شکایات مشتریان و تلاش در جهت افزایش سطح رضایتمندی آنان است. با استقرار الزامات استاندارد ISO 10002، شرکت اوستا هوش یار در مسیر بهبود مستمر و جلب اعتماد بیشتر مشتریان گام‌های مؤثرتری برمی‌دارد."
+        },
+        {
+          image: "ISO14001.webp",
+          title: "ISO14001",
+          text: "شرکت اوستا هوش یار با افتخار اعلام می‌دارد که موفق به دریافت گواهینامه بین‌المللی ISO 14001 در حوزه «سیستم مدیریت محیط زیست» شده است. اخذ این استاندارد معتبر جهانی بیانگر رویکرد مسئولانه شرکت در قبال حفاظت از محیط زیست، مدیریت بهینه منابع، کاهش آلاینده‌ها و ارتقای شاخص‌های توسعه پایدار است. این موفقیت نتیجه تلاش مستمر مدیران و کارشناسان شرکت در جهت انطباق با استانداردهای بین‌المللی و ایفای نقش مؤثر در مسئولیت‌های اجتماعی و زیست‌محیطی می‌باشد."
+        },{
+          title: "گواهینامه صلاحیت انفورماتیک",
+          text: "شرکت اوستا هوش یار با افتخار موفق به دریافت گواهینامه صلاحیت انفورماتیک از سوی شورای عالی انفورماتیک کشور شد. اخذ این گواهینامه معتبر، نشان‌دهنده توانمندی تخصصی و فنی شرکت در حوزه فناوری اطلاعات و ارتباطات و گواهی بر کیفیت خدمات و تعهد به اجرای پروژه‌های ملی و سازمانی است. این موفقیت، مسیر حضور پررنگ‌تر شرکت اوستا هوش یار در پروژه‌های کلان فناوری اطلاعات کشور را هموار ساخته و بیانگر اعتماد مراجع ذی‌صلاح به ظرفیت‌ها و توان کارشناسان این مجموعه می‌باشد.",
+          image: "13df7845b047.jpg"
+        },{
+          title: "HSE",
+          "image": "HSE.webp",
+          "text": "شرکت اوستا هوش یار مفتخر است که با استقرار و دریافت گواهینامه HSE (مدیریت بهداشت، ایمنی و محیط‌زیست)، گامی مؤثر در راستای حفاظت از سرمایه انسانی، ارتقای ایمنی در محیط کار و صیانت از محیط‌زیست برداشته است. این موفقیت، حاصل تلاش تیمی متخصص و تعهد سازمان به استانداردهای بین‌المللی در حوزه بهداشت، ایمنی و محیط‌زیست است. شرکت اوستا هوش یار همواره خود را متعهد می‌داند که در مسیر توسعه پایدار، به سلامت کارکنان، ایمنی فرآیندها و حفاظت از محیط‌زیست توجه ویژه‌ای داشته باشد."
+        },{
+          title: "ISO22301",
+          image: "ISO22301.jpg",
+          text: "شرکت اوستا هوش یار با افتخار اعلام می‌دارد که موفق به دریافت گواهینامه بین‌المللی ISO 22301 در حوزه «مدیریت تداوم کسب‌وکار» شده است. اخذ این استاندارد نشان‌دهنده تعهد شرکت به حفظ پایداری عملیات، مدیریت ریسک، و تضمین ارائه خدمات بدون وقفه به مشتریان و ذی‌نفعان است. این موفقیت نتیجه تلاش مستمر تیم متخصصان و توجه جدی به بهبود فرآیندها و ارتقای سطح کیفیت خدمات می‌باشد. شرکت اوستا هوش یار همواره در مسیر تعالی و انطباق با استانداردهای جهانی گام برداشته و دریافت ISO 22301 را نقطه عطفی مهم در مسیر رشد و توسعه خود می‌داند."
+        },{
+          title: "ISO22301",
+          image: "ISO22301.jpg",
+          text: "شرکت اوستا هوش یار با افتخار اعلام می‌دارد که موفق به دریافت گواهینامه بین‌المللی ISO 22301 در حوزه «مدیریت تداوم کسب‌وکار» شده است. اخذ این استاندارد نشان‌دهنده تعهد شرکت به حفظ پایداری عملیات، مدیریت ریسک، و تضمین ارائه خدمات بدون وقفه به مشتریان و ذی‌نفعان است. این موفقیت نتیجه تلاش مستمر تیم متخصصان و توجه جدی به بهبود فرآیندها و ارتقای سطح کیفیت خدمات می‌باشد. شرکت اوستا هوش یار همواره در مسیر تعالی و انطباق با استانداردهای جهانی گام برداشته و دریافت ISO 22301 را نقطه عطفی مهم در مسیر رشد و توسعه خود می‌داند."
+        },{
+          title: "ISO27001",
+          image: "ISO27001.webp",
+          text: "شرکت اوستا هوش یار مفتخر است که موفق به استقرار و دریافت گواهینامه بین‌المللی ISO/IEC 27001 در حوزه «سیستم مدیریت امنیت اطلاعات» گردیده است. این دستاورد نشان‌دهنده تعهد شرکت به حفاظت از اطلاعات مشتریان و سازمان، کاهش ریسک‌های امنیتی و رعایت بهترین شیوه‌های بین‌المللی در مدیریت اطلاعات است. شرکت اوستا هوش یار با استقرار ISO 27001، امنیت اطلاعات را به عنوان یک اولویت راهبردی در مسیر ارائه خدمات خود قرار داده است.اهداف اصلی ISO 27001: محافظت از اطلاعات حساس و محرمانه سازمان کاهش ریسک‌های امنیتی و تهدیدات سایبری اطمینان از دسترسی به داده‌ها فقط برای افراد مجاز رعایت الزامات قانونی و قراردادی مرتبط با امنیت اطلاعات ایجاد فرهنگ سازمانی مبتنی بر امنیت اطلاعات"
+        }
+      ]);
+    }, []);
+
+     return (
+      <div className={`my-5 px-5 pt-12 pb-8 tablet:pt-24 tablet:pb-16 rounded-xl w-full max-w-7xl mx-auto ${props.className} bg-bg-secondry dark:bg-dark-radial dark:bg-[unset]`} id="certificates">
+        <div className="flex flex-wrap tablet:flex-nowrap w-full max-w-6xl h-full tablet:max-h-[550px] rounded-xl bg-[#E0D2F3] dark:bg-[unset] dark:bg-dark-radial p-4 minitablet:p-8 tablet:p-16 mx-auto items-center shadow-lg">
+          <div className="basis-full tablet:basis-3/5 pb-8 pl-0 minitablet:p-4">
+            <h3 className='text-HeadingMx tablet:text-HeadingMx font-medium py-5 text-center tablet:text-right w-full'>بخشی از گواهینامه‌ها و افتخارات اوستاهوش‌یار</h3>
+            <h3 className="text-HeadingM font-medium text-black02 dark:text-white pb-5 text-center tablet:text-right">{certificates[current]?.title}</h3>
+            <p className='text-justify max-w-xl mx-auto tablet:mx-0'>{certificates[current]?.text}</p>
+          </div>
+          <div className='basis-full tablet:basis-2/5' id='certificate'>
+            {certificates[current] && <Image src={`/imgs/certificates/${certificates[current].image}`} width={100} height={100} alt={certificates[current].title} className='rounded-3xl shadow-xl w-full max-w-[300px] tablet:max-w-[450px]'/>}
+            <Image className='max-w-full scale-0 tablet:scale-1 pattern' src="/imgs/bg-ellipse-03.svg" alt="" width={100} height={100}/>
+          </div>
+        </div>
+        <Swiper slidesPerView={deviceType == "mobile" ? 2: 4} className='mt-24 w-full max-w-7xl mx-auto cursor-pointer' spaceBetween={16} navigation={true} autoplay={true} centeredSlides={deviceType === "mobile"? true: false} dir='ltr'>
+          {certificates.map((certificate: any, i: number) => <SwiperSlide key={i} onClick={() => setCurrent(i)} className="item m-2 p-2 mx-auto">
+            <Image src={`/imgs/certificates/${certificate.image}`} width={100} alt={certificate.title} height={100} />
+          </SwiperSlide>
+        )}
+        </Swiper>
+      </div>
+     );
+  }

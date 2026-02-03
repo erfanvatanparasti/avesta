@@ -1,0 +1,173 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@theme inline{
+  --color-background: var(--background);
+  --color-foreground: var(--foreground); 
+}
+
+:root {
+    --gradient-angle: 0deg;
+}
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+@custom-variant light (&:where([data-theme=light], [data-theme=light] *));
+@media (prefers-color-scheme: light) {
+  :root {
+    --background: #ffffff;
+    --foreground: #1C1B1B;
+  }
+}
+* {
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+body {
+  list-style: none;
+}
+footer{
+  /* background-image: url("/imgs/bg-footer.webp"); */
+  background-position: left center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position:relative;
+}
+footer > div{
+  z-index: 5;
+}
+footer::after{
+  content: "" ;
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  background-color: #00000055;
+  z-index: 1;
+}
+.animated{
+  transition: all 0.25s ease-in-out;
+}
+.shadow-from-bottom{
+  position: relative;
+}
+.shadow-from-bottom::after{
+  position: absolute;
+  content: "";
+  background-image: linear-gradient(to top, #F5F0FB, transparent 100%);
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.section-1{
+  background-image: url("/icons/stars-pattern-1.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.section-2{
+  background-image: url("/icons/stars-pattern-2.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.achievements-numbers{
+  position: relative;
+}
+.achievements-numbers div{
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.achievements-numbers::before {
+    /* content: ""; */
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.25;
+}
+#collaborations{
+  background-position: center;
+  background-size: clamp(480px, 100%, 1200px) 100%;
+  /* background-repeat: no-repeat; */
+}
+.services-container{
+  /* background-image: radial-gradient(#1B1230, #070010 44%, #45187D 88%); */
+}
+#certificate{
+  z-index: 5;
+  position: relative;
+}
+#certificate img{
+  z-index: 5;
+  /* width: max-content; */
+  margin: auto;
+  height: 100%;
+}
+#certificate .pattern{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: -100px;
+  left: -00px;
+  scale: 1.25;
+  opacity: 0.5;
+  rotate: -270deg;
+  z-index: -1;
+}
+.infography-item{
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+.infography-item::before{
+  position: absolute;
+  content: "";
+  width: 150%;
+  height: 150%;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  /* background-image: conic-gradient(from 0deg, rgb(79, 6, 97), rgb(208, 96, 38), rgb(8, 0, 22), rgb(15, 2, 49), rgb(79, 6, 97)); */
+  z-index: -1;
+  animation: rotate infinite 2.5s ease-in-out;
+}
+.infography-item img{
+  z-index: 5;
+  border-radius: 8px;
+  width: 90px;
+  margin: auto;
+}
+@keyframes rotate{
+  0% {
+    rotate: 0deg;
+  }
+  100% {
+    rotate: 360deg;
+  }
+}
+button{
+  outline: none;
+}
+.hamburger-bar-left{
+  rotate: 45deg;
+  top: -50%;
+}
+.hamburger-bar-right{
+  top: 50%;
+  rotate: -45deg;
+}
+.hambureger-menu{
+  z-index: 25;
+}
+.menu-screen {
+    display: block;
+    z-index: 5;
+    opacity: 1;
+    width: 100vw;
+    height: 100%;
+    position: fixed;
+    inset: 0;
+    transition: all 0.25s ease-in-out;
+}
