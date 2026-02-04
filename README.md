@@ -3,29 +3,36 @@
 
 Node.js (نسخه 18.17 یا بالاتر)
 
-توصیه می‌شود از LTS استفاده کنید
+توصیه می‌شود از نسخه LTS استفاده کنید
 
-میتوانید از Node.js دانلود کنید
+میتوانید از [Node.js](https://nodejs.org) دانلود کنید
 
+```bash
 npm (معمولاً همراه Node.js نصب می‌شود)
-
+```
 ## Git (برای کنترل نسخه)
 
 📥 دانلود و نصب پروژه
 روش ۱: کلون از ریپوزیتوری (اگر کد در گیت‌هاب/GitLab است)
 # کلون ریپوزیتوری
+```bash
 git clone <آدرس-ریپوزیتوری-پروژه>
 cd <نام-پوشه-پروژه>
-
+```
 # نصب وابستگی‌ها
+```bash
 npm install
+```
 روش ۲: از فایل زیپ
 # استخراج فایل زیپ
+```bash
 unzip project.zip
 cd <نام-پوشه-پروژه>
-
+```
 # نصب وابستگی‌ها
+```bash
 npm install
+```
 🚀 راه‌اندازی و ساخت پروژه
 حالت توسعه (Development)
 # راه‌اندازی سرور توسعه
@@ -37,12 +44,8 @@ npm run dev
 
 پروژه روی http://localhost:3000 اجرا می‌شود
 
-تغییرات فایل‌ها به صورت زنده اعمال می‌شوند (Hot Reload)
 
-برای توقف: Ctrl+C در ترمینال
-
-ساخت برای تولید (Build)
-# ساخت پروژه برای محیط تولید
+# تهیه خروجی (Build)
 
 ```bash
 npm run build
@@ -62,17 +65,16 @@ npm run lint
 npm test
 ```
 ## 🏗️ ساختار پروژه
-
+```bash
 project/
 ├── app/                    # صفحات و layoutهای Next.js 13+
 ├── components/            # کامپوننت‌های قابل استفاده مجدد
-├── lib/                   # توابع و utilities
 ├── public/               # فایل‌های استاتیک
-├── styles/               # فایل‌های استایل (Tailwind)
 ├── package.json          # وابستگی‌ها و اسکریپت‌ها
 ├── tailwind.config.js    # پیکربندی TailwindCSS
 ├── next.config.js        # پیکربندی Next.js
 └── README.md             # این فایل
+```
 🔧 تنظیمات محیط (Environment Variables)
 اگر پروژه نیاز به متغیرهای محیطی دارد:
 
@@ -80,8 +82,8 @@ project/
 
 متغیرهای مورد نیاز را اضافه کنید:
 
+.env
 ```bash
-env
 NEXT_PUBLIC_API_URL=http://localhost:3000/
 ```
 
