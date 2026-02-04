@@ -28,9 +28,9 @@ export default function InfoGraphy(props: any){
                 <Image className='basis-2/3 h-full' src={`/icons/avestaCpuContainer-${theme}.svg`} alt="Info Graph" width={900} height={300} />
               </div>              
               <span className='basis-1/3 infography-item border-2 dark:border-0 border-gray p-2 dark:p-1 rounded-xl border-gray cursor-pointer'>
-                <Image className='dark:bg-black infography-item pb-2 px-0' src={`/icons/aiIcon-${theme}.svg`} alt="Info Graph" width={72} height={72} />
-                <h3 className='text-BodyL text-center'>هوش مصنوعی</h3>
+                <Image className='dark:bg-black infography-item px-0' src={`/icons/aiIcon-${theme}.svg`} alt="Info Graph" width={72} height={72} />
               </span>
+              <h3 className='text-BodyL text-center -mt-7'>هوش مصنوعی</h3>
             </div>
           </div>
           <div className='inline-flex flex-col basis-1/7 tablet:basis-1/5 items-center justify-between mb-auto gap-y-8'>
