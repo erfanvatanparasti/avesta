@@ -9,6 +9,7 @@ import InfoGraphy from "@/components/InfoGraphy01";
 import Services from "@/components/Services";
 import Testimonials from "@/components/Testimonials";
 import { Suspense } from 'react'
+import Blogslider from "@/components/Blogslider";
 
 export default function Home() {
   
@@ -19,18 +20,19 @@ export default function Home() {
       </div>
       <Hero className=" px-2 minitablet:px-4 tablet:px-6 pb-5 pt-4 flex flex-col gap-y-4 tablet:gap-y-6 max-w-7xl"/>
       <InfoGraphy className=" px-2 minitablet:px-4 tablet:px-6 max-w-7xl"/>
-      
+{/*       
       <div className="section-1 px-2 minitablet:px-4 tablet:px-6">
         <Services className=" max-w-7xl"/>
         <AboutAvesta className="mt-16 tablet:my-20 max-w-7xl"/>
-      </div>
-      <div className="section-2 inline-flex flex-col gap-10">
+      </div> */}
+      {/* <div className="section-2 inline-flex flex-col gap-10">
         <Achievements className="my-20 tablet:my-10"/>
         <Features className="my-20 tablet:my-10"/>
         <Collaborations className="py-10"/>
         <Certificates />
         <Testimonials />
-      </div>
+      </div> */}
+      <Blogslider />
     </main>
   );
 }

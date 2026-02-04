@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="px-4 bg-dark-radial-02 minitablet:bg-footer minitablet:dark:bg-dark-footer laptop:px-44 py-12 min-h-[300px] text-white items-start flex justify-start flex-col">
       <div className="flex justify-start items-center w-full max-w-7xl">
         <div className="w-full mobile:basis-full">
-          <Image className="w-full max-w-32" src="/imgs/logo.png" alt="Logo" width={66} height={44} alt="اوستا | مدیریت هوشمند لجستیک و حمل‌ونقل کالا"/>
+          <Image className="w-full max-w-32" src="/imgs/logo.svg" alt="Logo" width={138} height={76} alt="اوستا | مدیریت هوشمند لجستیک و حمل‌ونقل کالا"/>
         </div>
       </div>
       <div className="flex flex-wrap justify-between max-w-7xl mx-0">
