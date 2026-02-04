@@ -9,7 +9,7 @@ Node.js (نسخه 18.17 یا بالاتر)
 
 📥 دانلود و نصب پروژه
 
-# کلون ریپوزیتوری
+# دریافت مخزن پروژه
 ```bash
 git clone https://github.com/erfanvatanparasti/avesta.git
 cd avesta

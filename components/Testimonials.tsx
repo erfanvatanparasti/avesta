@@ -8,7 +8,6 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import Image from 'next/image';
 import { useDeviceType } from '@/context/useDeviceType';
-import axiosInstance from '@/lib/axios';
 import useSWR from "swr";
 
 export default function Testimonials(props: any){

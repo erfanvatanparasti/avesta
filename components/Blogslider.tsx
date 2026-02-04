@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import useSWR from "swr";
 type blogSliderType = {
   id: string,
   title: string,
@@ -10,6 +11,7 @@ type blogSliderType = {
   order: string
 };
 export default function Blogslider(props: any){
+  const { data, error, isLoading }  = useSWR("/api/blogs", (...args) => fetch(...args).then(res => res.json()));
   const changeSlide = (slide:string) => {
     setBlogs(prev => prev.map((p:blogSliderType, i:number) => {
       return slide == p.id? {...p, order: 'active'}: {...p, order: 'unactive'};
@@ -23,41 +25,12 @@ export default function Blogslider(props: any){
     console.log({currentSlide})
   }, [currentSlide]);
   useEffect(() => {
-    const fetchBlogs =  async() => {
-      setLoading(true);
-      new Promise((res, rej) => {
-        setTimeout(() => {
-          const data: blogSliderType[] = [
-            {
-              id: "03",
-              title: "۲۶ آذر، روز ملی حمل‌ونقل ایران گرامی باد",
-              text: "حمل‌ونقل، شریان حیاتی اقتصاد و زیرساخت توسعه پایدار کشور است. از جاده و ریل تا دریا و هوا، این صنعت نقشی تعیین‌کننده در پایداری زنجیره تأمین، رشد تجارت و اتصال هوشمند کسب‌وکارها",
-              image: "blog-03.jpg",
-              order: 'unactive'
-            },
-            {
-              id: "02",
-              title: "۲۶ آذر، روز ملی حمل‌ونقل ایران گرامی باد",
-              text: "حمل‌ونقل، شریان حیاتی اقتصاد و زیرساخت توسعه پایدار کشور است. از جاده و ریل تا دریا و هوا، این صنعت نقشی تعیین‌کننده در پایداری زنجیره تأمین، رشد تجارت و اتصال هوشمند کسب‌وکارها",
-              image: "blog-02.jpg",
-              order: 'active'
-            },
-            {
-              id: "01",
-              title: "۲۶ آذر، روز ملی حمل‌ونقل ایران گرامی باد",
-              text: "حمل‌ونقل، شریان حیاتی اقتصاد و زیرساخت توسعه پایدار کشور است. از جاده و ریل تا دریا و هوا، این صنعت نقشی تعیین‌کننده در پایداری زنجیره تأمین، رشد تجارت و اتصال هوشمند کسب‌وکارها",
-              image: "blog-01.jpg",
-              order: 'unactive'
-            },
-          ]
-          setBlogs(data.sort(blog => blog.order == "active"? 1: -1))
-          res(1);
-          setLoading(false);
-        }, 2000);
-      });
+    if(data){
+        const blogs: blogSliderType[] = data.data;
+        setBlogs(blogs.sort((blog:blogSliderType) => blog.order == "active"? 1: -1))
     }
-    fetchBlogs();
-  }, [])
+  }, [isLoading])
+    if (error) return <div>خطا: {data.message}</div>;
   return (
       <div className={`${props.className} my-5 mx-auto w-full max-w-3xl px-6 tablet:px-0 `}>
         <div className="flex flex-col items-center justify-center max-w-4xl mx-auto text-primary dark:text-white">
@@ -66,7 +39,7 @@ export default function Blogslider(props: any){
           </h3>
         </div>
         <div className="mt-10 py-5 relative blog-slider">
-          {loading ? <>
+          {isLoading ? <>
           <div className="blog-item blog-loading h-[300px] py-0 rounded-xl shadow-left-side">
             <div className="blog-content flex flex-col justify-center gap-y-10 px-5 bg-bg-primary dark:bg-[#501665] rounded-xl text-center">
               <h4 className="text-HeadingM text-right mx-auto">در حال دریافت اطلاعات</h4>
