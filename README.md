@@ -65,17 +65,6 @@ project/
 ```bash
 node --version
 ```
-وابستگی‌ها را دوباره نصب کنید:
-
-```bash
-rm -rf node_modules package-lock.json
-npm install
-```
-
-کش Next.js را پاک کنید:
-```bash
-npm run clean
-```
 
 ### 📝 توضیحات اضافی
 - کار با Next.js 14+ و App Router
