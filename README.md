@@ -1,36 +1,106 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+📋 پیش‌نیازهای نصب
+قبل از شروع، مطمئن شوید سیستم شما دارای موارد زیر است:
 
-First, run the development server:
+Node.js (نسخه 18.17 یا بالاتر)
 
-```bash
+توصیه می‌شود از LTS استفاده کنید
+
+میتوانید از Node.js官网 دانلود کنید
+
+npm (معمولاً همراه Node.js نصب می‌شود)
+
+Git (برای کنترل نسخه)
+
+📥 دانلود و نصب پروژه
+روش ۱: کلون از ریپوزیتوری (اگر کد در گیت‌هاب/GitLab است)
+# کلون ریپوزیتوری
+git clone <آدرس-ریپوزیتوری-پروژه>
+cd <نام-پوشه-پروژه>
+
+# نصب وابستگی‌ها
+npm install
+روش ۲: از فایل زیپ
+# استخراج فایل زیپ
+unzip project.zip
+cd <نام-پوشه-پروژه>
+
+# نصب وابستگی‌ها
+npm install
+🚀 راه‌اندازی و ساخت پروژه
+حالت توسعه (Development)
+# راه‌اندازی سرور توسعه
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+پس از اجرای دستور بالا:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+پروژه روی http://localhost:3000 اجرا می‌شود
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+تغییرات فایل‌ها به صورت زنده اعمال می‌شوند (Hot Reload)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+برای توقف: Ctrl+C در ترمینال
 
-## Learn More
+ساخت برای تولید (Build)
+# ساخت پروژه برای محیط تولید
+npm run build
 
-To learn more about Next.js, take a look at the following resources:
+# اجرای نسخه ساخته شده
+npm start
+دستورات دیگر مفید
+# اجرای لینتر (اگر پیکربندی شده باشد)
+npm run lint
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# اجرای تست‌ها (اگر پیکربندی شده باشد)
+npm test
+🏗️ ساختار پروژه
+text
+project/
+├── app/                    # صفحات و layoutهای Next.js 13+
+├── components/            # کامپوننت‌های قابل استفاده مجدد
+├── lib/                   # توابع و utilities
+├── public/               # فایل‌های استاتیک
+├── styles/               # فایل‌های استایل (Tailwind)
+├── package.json          # وابستگی‌ها و اسکریپت‌ها
+├── tailwind.config.js    # پیکربندی TailwindCSS
+├── next.config.js        # پیکربندی Next.js
+└── README.md             # این فایل
+🔧 تنظیمات محیط (Environment Variables)
+اگر پروژه نیاز به متغیرهای محیطی دارد:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+فایل .env.local در ریشه پروژه ایجاد کنید
 
-## Deploy on Vercel
+متغیرهای مورد نیاز را اضافه کنید:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+env
+NEXT_PUBLIC_API_URL=http://localhost:3000/api
+DATABASE_URL=your_database_url
+📞 پشتیبانی
+اگر با مشکلی مواجه شدید:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+مطمئن شوید Node.js به درستی نصب شده:
+
+node --version
+وابستگی‌ها را دوباره نصب کنید:
+
+rm -rf node_modules package-lock.json
+npm install
+کش Next.js را پاک کنید:
+
+npm run clean
+
+
+📝 توضیحات اضافی
+این پروژه به عنوان بخشی از فرآیند ارزیابی فنی برای موقعیت شغلی توسعه‌دهنده Front-end/Full-stack ایجاد شده است. هدف از این پروژه نمایش توانایی‌های فنی شامل:
+
+کار با Next.js 13+ و App Router
+
+استایل‌دهی با TailwindCSS
+
+ساختاردهی کد به صورت حرفه‌ای
+
+پیاده‌سازی best practices
+
+موفق باشید در ادامه فرآیند استخدام! 🎯
+
+تاریخ ایجاد: فوریه ۲۰۲۴
+فریمورک اصلی: Next.js 14
+استایل: TailwindCSS 3
