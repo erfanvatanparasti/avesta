@@ -170,6 +170,7 @@ button{
     position: fixed;
     inset: 0;
     transition: all 0.25s ease-in-out;
+    z-index: 10;
 }
 .blog-slider{
   position:relative;

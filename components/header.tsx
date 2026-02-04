@@ -32,29 +32,29 @@ export default function Header(props: any) {
     };
   },[hamburger_status, deviceType]);
   return (<>
-      <span className={`menu-screen bg-[#000000AA] dark:bg-[#FFFFFFAA]`} style={{opacity: (hamburger_status || (!hamburger_status && servicesMenu))? 0.8: 0}} onKeyUp={(e:KeyboardEvent) => {
+      <span className={`menu-screen bg-[#000000AA] dark:bg-[#FFFFFFAA] ${(hamburger_status || (!hamburger_status && servicesMenu))?'z-10':'z-0'}`} style={(hamburger_status || (!hamburger_status && servicesMenu))? {opacity: 0.8, zIndex: 10}: {opacity: 0, zIndex: 0, display: "none"}} onKeyUp={(e:KeyboardEvent) => {
         console.log(e)
       }} onClick={() => {
         setServicesMenu(false)
         setHamburgerStatus(false)
       }}></span>
-      <nav className={`${props.className} flex items-center justify-between laptop:justify-around w-full rounded-full bg-bg-secondry dark:bg-bg-menubar-dark mt-5 max-w-wide mx-auto gap-x-6 loptop:gap-x-24 px-8 tablet:px-10 labtop:px-12 py-2 z-10 relative`} dir="rtl">
+      <nav className={`${props.className} ${servicesMenu? 'dark:bg-dark-radial z-10': ''} flex items-center justify-between laptop:justify-around w-full rounded-full bg-bg-secondry dark:bg-bg-menubar-dark mt-5 max-w-wide mx-auto gap-x-6 loptop:gap-x-24 px-8 tablet:px-10 labtop:px-12 py-2 z-10 relative`} dir="rtl">
         <Image src={`/imgs/logo${theme == "dark"? '-dark':''}.png`} alt="Logo" width={66} height={44} alt="اوستا | مدیریت هوشمند لجستیک و حمل‌ونقل کالا"/>
         {!menuType && <ul className="flex gap-x-2 px-3 text-primary dark:text-white z-25">
           <li className="p-2"><Link className="py-2 text-Body tablet:text-BodyL hover:text-orange" href="/">صفحه اصلی</Link></li>
           <li className="p-2 relative">
             <span onMouseEnter={(e:any) => setServicesMenu(true)}>خدمات {servicesMenu? "-":"+"}</span> 
             {servicesMenu && <ol style={{animationDelay: "0.5s"}} className="transition fixed z-15 top-28 w-full max-w-xl text-Body leading-8 bg-bg-secondry dark:bg-[#000000D0] dark:bg-dark-radial p-3 rounded-lg">
-              <li className="transition hover:translate-x-2 hover:text-orange">صدور فاکتور خدمات (ISI)</li>
-              <li className="transition hover:translate-x-2 hover:text-orange">ترخیص کالا و امور گمرکی (GCA)</li>
-              <li className="transition hover:translate-x-2 hover:text-orange">مدیریت حمل و نقل دریایی (MTM)</li>
-              <li className="transition hover:translate-x-2 hover:text-orange">مدیریت جابجایی کالا (PTS)</li>
-              <li className="transition hover:translate-x-2 hover:text-orange">مدیریت حمل و نقل ریلی (RTM)</li>
-              <li className="transition hover:translate-x-2 hover:text-orange">مدیریت عملیات بندری (POM)</li>
-              <li className="transition hover:translate-x-2 hover:text-orange">سامانه بارکوش (Barkoush)</li>
-              <li className="transition hover:translate-x-2 hover:text-orange">سامانه جامع انبارداری کالا (GWS)</li>
-              <li className="transition hover:translate-x-2 hover:text-orange">مدیریت ترافیک و حمل و نقل هوشمند(ITS)</li>
-              <li className="transition hover:translate-x-2 hover:text-orange">مدیریت حمل و نقل جاده ای (HTM)'</li>
+              <li className="cursor-pointer transition hover:-translate-x-2 hover:text-orange">صدور فاکتور خدمات (ISI)</li>
+              <li className="cursor-pointer transition hover:-translate-x-2 hover:text-orange">ترخیص کالا و امور گمرکی (GCA)</li>
+              <li className="cursor-pointer transition hover:-translate-x-2 hover:text-orange">مدیریت حمل و نقل دریایی (MTM)</li>
+              <li className="cursor-pointer transition hover:-translate-x-2 hover:text-orange">مدیریت جابجایی کالا (PTS)</li>
+              <li className="cursor-pointer transition hover:-translate-x-2 hover:text-orange">مدیریت حمل و نقل ریلی (RTM)</li>
+              <li className="cursor-pointer transition hover:-translate-x-2 hover:text-orange">مدیریت عملیات بندری (POM)</li>
+              <li className="cursor-pointer transition hover:-translate-x-2 hover:text-orange">سامانه بارکوش (Barkoush)</li>
+              <li className="cursor-pointer transition hover:-translate-x-2 hover:text-orange">سامانه جامع انبارداری کالا (GWS)</li>
+              <li className="cursor-pointer transition hover:-translate-x-2 hover:text-orange">مدیریت ترافیک و حمل و نقل هوشمند(ITS)</li>
+              <li className="cursor-pointer transition hover:-translate-x-2 hover:text-orange">مدیریت حمل و نقل جاده ای (HTM)'</li>
             </ol>}
           </li>
           <li className="p-2"><Link className="py-2 text-Body tablet:text-BodyL hover:text-orange" href="/">درباره اوستا</Link></li>
