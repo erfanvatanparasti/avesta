@@ -24,6 +24,9 @@
 body {
   list-style: none;
 }
+.swiper-slide{
+  margin: auto;
+}
 footer{
   /* background-image: url("/imgs/bg-footer.webp"); */
   background-position: left center;

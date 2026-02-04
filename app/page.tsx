@@ -28,7 +28,7 @@ export default function Home() {
       <div className="section-2 inline-flex flex-col gap-10">
         <Achievements className="my-20 tablet:my-10"/>
         <Features className="my-20 tablet:my-10"/>
-        <Collaborations className="py-10"/>
+        <Collaborations className="py-0"/>
         <Certificates />
         <Testimonials />
       </div>
