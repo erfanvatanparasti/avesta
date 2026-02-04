@@ -32,9 +32,17 @@ export default async function RootLayout({
   const serverDevice = parseUserAgent(ua);
   return (
     <html lang="en" dir="rtl" className={`${iranyekanFont.className}`}>
+      <head>
+        {/*
+        */}
+         <script src="/js/dotwave.min.js"></script>
+        <script src="/js/dotwave-element.min.js"></script> 
+        <script src="/js/script.js" defer></script>
+      </head>
       <body className="bg-bg-primary dark:bg-black dark:text-white text-primary">
       <ThemeProvider>
         <DeviceProvider serverInfo={serverDevice}>
+
           <Header className="py-3 max-w-7xl"/>
           {children}
           <Footer/>
