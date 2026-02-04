@@ -31,7 +31,7 @@ export default async function RootLayout({
   const ua = (await headers()).get('user-agent');  // <-- no await
   const serverDevice = parseUserAgent(ua);
   return (
-    <html lang="en" dir="rtl" className={`dark ${iranyekanFont.className}`}>
+    <html lang="en" dir="rtl" className={`${iranyekanFont.className}`}>
       <body className="bg-bg-primary dark:bg-black dark:text-white text-primary">
       <ThemeProvider>
         <DeviceProvider serverInfo={serverDevice}>
