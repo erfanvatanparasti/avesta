@@ -175,7 +175,7 @@ button{
   position:relative;
   min-height: 300px;
 }
-.blog-slider .blog-item{
+.blog-slider .blog-item:not(.blog-loading){
   /* max-width: 100%; */
   cursor: pointer;
   transition: all 0.25s ease-in-out;
@@ -184,10 +184,10 @@ button{
   /* visibility: hidden; */
   position: relative;
   scale: 1.05;
-  transition: all;
+  transition: all 0.25s ease-in-out;
   z-index: 10;
 }
-.blog-slider .blog-item:first-child .blog-content{
+.blog-slider .blog-item:not(.blog-loading):first-child .blog-content{
   position: absolute;
   width: 100%;
   max-width: 260px;
@@ -197,32 +197,32 @@ button{
   top: 0;
   bottom: 0;
 }
-.blog-slider .blog-item:first-child img{
+.blog-slider .blog-item:not(.blog-loading):first-child img{
   margin: auto;
   max-height: 450px;
   width: 100%;
   border-radius: 16px;
   object-fit: cover;
 }
-.blog-slider .blog-item:last-child, .blog-slider .blog-item:nth-child(2){
+.blog-slider .blog-item:not(.blog-loading):last-child, .blog-slider .blog-item:not(.blog-loading):nth-child(2){
   overflow: hidden;
   max-height: 400px;
   height: 100%;
   position: absolute;
   inset: 50% 0 0 0;
 }
-.blog-slider .blog-item:nth-child(2){
+.blog-slider .blog-item:not(.blog-loading):nth-child(2){
   translate: 200px -50%;
 }
-.blog-slider .blog-item:last-child{
+.blog-slider .blog-item:not(.blog-loading):last-child{
   translate: -200px -50%;
 }
-.blog-slider .blog-item:nth-child(2) .blog-content :is(p, a, hr), .blog-slider .blog-item:last-child .blog-content :is(p, a, hr){
+.blog-slider .blog-item:not(.blog-loading):nth-child(2) .blog-content :is(p, a, hr), .blog-slider .blog-item:not(.blog-loading):last-child .blog-content :is(p, a, hr){
   scale: 0;
   font-size: 0;
   display: none;
 }
-.blog-slider .blog-item:nth-child(2) .blog-content{
+.blog-slider .blog-item:not(.blog-loading):nth-child(2) .blog-content{
   rotate: -90deg;
   max-width: 550px;
   width: 100%;
@@ -232,16 +232,16 @@ button{
   left: calc(100% - 24px);
   translate: -50% -50%;
 } 
-.blog-slider .blog-item:nth-child(2) .blog-content h4{
+.blog-slider .blog-item:not(.blog-loading):nth-child(2) .blog-content h4{
   padding: 8px 16px;
   white-space: nowrap;
 }
-.blog-slider .blog-item:nth-child(2) img{
+.blog-slider .blog-item:not(.blog-loading):nth-child(2) img{
   max-height: 450px;
   object-fit: cover;
   object-position: center;
 }
-.blog-slider .blog-item:last-child .blog-content{
+.blog-slider .blog-item:not(.blog-loading):last-child .blog-content{
   rotate: -90deg;
   max-width: 550px;
   width: 100%;
@@ -251,11 +251,11 @@ button{
   left: calc(-0% + 24px);;
   translate: -50% -50%;
 } 
-.blog-slider .blog-item:last-child .blog-content h4{
+.blog-slider .blog-item:not(.blog-loading):last-child .blog-content h4{
   padding: 8px 16px;
   white-space: nowrap;
 }
-.blog-slider .blog-item:last-child img{
+.blog-slider .blog-item:not(.blog-loading):last-child img{
   max-height: 450px;
   object-fit: cover;
   object-position: center;
