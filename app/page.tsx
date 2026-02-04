@@ -9,10 +9,9 @@ import InfoGraphy from "@/components/InfoGraphy01";
 import Services from "@/components/Services";
 import Testimonials from "@/components/Testimonials";
 import { Suspense } from 'react'
-import Blogslider from "@/components/Blogslider";
+import Blogslider from "@/components/blog/Blogslider";
 
 export default function Home() {
-  
   return (<main className="mx-auto gap-y-10 flex flex-col">
       <div className="top-bg-patern px-2 minitablet:px-4 tablet:px-6">
         <Image src="/icons/bg-pattern-01.svg" className="absolute top-0 left-0 z-[-1] w-full max-w-xs" width={550} height={500} alt=""/>
@@ -35,4 +34,34 @@ export default function Home() {
       <Blogslider />
     </main>
   );
+}
+
+
+export async function generateMetadata() {
+  return {
+    title: "اَوستا سامانه مدیریت الکترونیکی و هوشمند حمل و نقل کالا و لجستیک",
+    description: "اوستا، سامانه‌ای برای مدیریت هوشمند لجستیک و حمل‌ونقل کالا با خدمات پیشرفته در سراسر کشور.",
+    openGraph: {
+      title: "اَوستا سامانه مدیریت الکترونیکی و هوشمند حمل و نقل کالا و لجستیک",
+      description: "اوستا، سامانه‌ای برای مدیریت هوشمند لجستیک و حمل‌ونقل کالا با خدمات پیشرفته در سراسر کشور.",
+      url: "https://avestasmart.com",
+      siteName: " شرکت اَوستا‌ هوش‌یار",
+      images: [
+        {
+          url: "https://avestasmart.com/assets/logo/logo-dark.webp",
+          width: 1200,
+          height: 630,
+          alt: "Our Blog",
+        },
+      ],
+      locale: "en_US",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: " شرکت اَوستا‌ هوش‌یار",
+      description: "اوستا، سامانه‌ای برای مدیریت هوشمند لجستیک و حمل‌ونقل کالا با خدمات پیشرفته در سراسر کشور.",
+      images: ["https://avestasmart.com/assets/logo/logo-dark.webp"],
+    },
+  };
 }

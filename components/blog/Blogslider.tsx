@@ -18,15 +18,13 @@ export default function Blogslider(props: any){
     }).sort(blog => blog.order == "active"? 1: -1));
   };
   const [currentSlide, setCurrentSlide] = useState("01");
-  const [loading, setLoading] = useState(true);
   const [blogs, setBlogs] = useState<blogSliderType[]>([]);
   useEffect(() => {
     changeSlide(currentSlide);
-    console.log({currentSlide})
   }, [currentSlide]);
   useEffect(() => {
     if(data){
-        const blogs: blogSliderType[] = data.data;
+        const blogs: blogSliderType[] = data.data?? [];
         setBlogs(blogs.sort((blog:blogSliderType) => blog.order == "active"? 1: -1))
     }
   }, [isLoading])

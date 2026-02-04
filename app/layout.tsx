@@ -36,7 +36,7 @@ export default async function RootLayout({
       <ThemeProvider>
         <DeviceProvider serverInfo={serverDevice}>
           <Header className="py-3 max-w-7xl"/>
-            {children}
+          {children}
           <Footer/>
         </DeviceProvider>
       </ThemeProvider>
