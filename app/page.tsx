@@ -17,10 +17,10 @@ export default function Home() {
         <Image src="/icons/bg-pattern-01.svg" className="absolute top-0 left-0 z-[-1] w-full max-w-xs" width={550} height={500} alt=""/>
         <Image src="/icons/bg-pattern-02.svg" className="absolute top-0 right-0 z-[-1] w-full max-w-xs" width={550} height={500} alt=""/>
       </div>
-      <section id="main" className="absolute top-0 left-0 right-0 z-5 w-full h-screen"></section>
+      <section id="main">
         <Hero className=" px-2 minitablet:px-4 tablet:px-6 pb-5 pt-4 flex flex-col gap-y-4 tablet:gap-y-6 max-w-7xl"/>
         <InfoGraphy className=" px-2 minitablet:px-4 tablet:px-6 max-w-7xl"/>
-       
+       </section>
       <div className="section-1 px-2 minitablet:px-4 tablet:px-6">
         <Services className=" max-w-7xl"/>
         <AboutAvesta className="mt-16 tablet:my-20 max-w-7xl"/>

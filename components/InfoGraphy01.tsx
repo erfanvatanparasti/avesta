@@ -24,7 +24,9 @@ export default function InfoGraphy(props: any){
           </div>
           <div className='inline-flex flex-col items-center basis-4/5 tablet:basis-[75%]'>
             <div className='inline-flex flex-col gap-y-3 tablet:gap-y-10 items-center justify-between'>
-              <Image className='basis-2/3 h-full' src={`/icons/avestaCpuContainer-${theme}.svg`} alt="Info Graph" width={900} height={300} />
+              <div className='avesta-cpu-container'>
+                <Image className='basis-2/3 h-full' src={`/icons/avestaCpuContainer-${theme}.svg`} alt="Info Graph" width={900} height={300} />
+              </div>              
               <span className='basis-1/3 infography-item border-2 dark:border-0 border-gray p-2 dark:p-1 rounded-xl border-gray cursor-pointer'>
                 <Image className='dark:bg-black infography-item pb-2 px-0' src={`/icons/aiIcon-${theme}.svg`} alt="Info Graph" width={72} height={72} />
                 <h3 className='text-BodyL text-center'>هوش مصنوعی</h3>

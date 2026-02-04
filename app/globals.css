@@ -27,6 +27,11 @@ body {
 .swiper-slide{
   margin: auto;
 }
+.logo-menu{
+  width: 66px;
+  height: 42px;
+  object-fit: cover;
+}
 footer{
   /* background-image: url("/imgs/bg-footer.webp"); */
   background-position: left center;
@@ -62,6 +67,37 @@ footer::after{
   inset: 0;
   z-index: 0;
   pointer-events: none;
+}
+.avesta-cpu-container{
+  position: relative;
+  overflow: hidden;
+}
+.avesta-cpu-container::after {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    z-index: -2;
+    content: "";
+    border: 10px cyan solid;
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    filter: saturate(500);
+    /* animation: avesta-cpu-container-anim infinite 3s linear; */
+}
+
+@keyframes avesta-cpu-container-anim {
+  from{
+    opacity: 0.3;
+    width: 20px;
+    height: 20px;
+  }
+  to{
+    opacity: 0.05;
+    width: 50%;
+    height: 100%;
+  }
 }
 .section-1{
   background-image: url("/icons/stars-pattern-1.svg");

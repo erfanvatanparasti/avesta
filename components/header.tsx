@@ -39,7 +39,7 @@ export default function Header(props: any) {
         setHamburgerStatus(false)
       }}></span>
       <nav className={`${props.className} ${servicesMenu? 'dark:bg-dark-radial z-10': ''} flex items-center justify-between laptop:justify-around w-full rounded-full bg-bg-secondry dark:bg-bg-menubar-dark mt-5 max-w-wide mx-auto gap-x-6 loptop:gap-x-24 px-8 tablet:px-10 labtop:px-12 py-2 z-10 relative`} dir="rtl">
-        <Image src={`/imgs/logo${theme == "dark"? '-dark':''}.png`} alt="Logo" width={66} height={44} alt="اوستا | مدیریت هوشمند لجستیک و حمل‌ونقل کالا"/>
+        <Image className="logo-menu" src={`/imgs/logo${theme == "dark"? '-dark':''}.png`} alt="Logo" width={66} height={42} alt="اوستا | مدیریت هوشمند لجستیک و حمل‌ونقل کالا"/>
         {!menuType && <ul className="flex gap-x-2 px-3 text-primary dark:text-white z-25">
           <li className="p-2"><Link className="py-2 text-Body tablet:text-BodyL hover:text-orange" href="/">صفحه اصلی</Link></li>
           <li className="p-2 relative">

@@ -31,10 +31,8 @@ export default async function RootLayout({
   const ua = (await headers()).get('user-agent');  // <-- no await
   const serverDevice = parseUserAgent(ua);
   return (
-    <html lang="en" dir="rtl" className={`${iranyekanFont.className}`}>
+    <html lang="en" dir="rtl" className={` ${iranyekanFont.className}`}>
       <head>
-        {/*
-        */}
          <script src="/js/dotwave.min.js"></script>
         <script src="/js/dotwave-element.min.js"></script> 
         <script src="/js/script.js" defer></script>
