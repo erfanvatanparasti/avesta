@@ -1,4 +1,3 @@
-// app/lib/device/parseUserAgent.ts
 import { UAParser } from "ua-parser-js";
 
 export type DeviceType = | "mobile"  | "tablet"  | "desktop"  | "tv" | "wearable" | "bot" | "unknown";

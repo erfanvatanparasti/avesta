@@ -216,10 +216,10 @@ button{
   inset: 50% 0 0 0;
 }
 .blog-slider .blog-item:not(.blog-loading):nth-child(2){
-  translate: 200px -50%;
+  translate: 100px -50%;
 }
 .blog-slider .blog-item:not(.blog-loading):last-child{
-  translate: -200px -50%;
+  translate: -100px -50%;
 }
 .blog-slider .blog-item:not(.blog-loading):nth-child(2) .blog-content :is(p, a, hr), .blog-slider .blog-item:not(.blog-loading):last-child .blog-content :is(p, a, hr){
   scale: 0;

@@ -49,8 +49,9 @@ npm test
 ## 🏗️ ساختار پروژه
 ```bash
 project/
-├── app/                    # صفحات و layoutهای Next.js 13+
-├── components/            # کامپوننت‌های قابل استفاده مجدد
+├── app/                  # صفحات و layoutهای Next.js 13+
+├── components/           # کامپوننت‌های قابل استفاده مجدد
+├── context/              # مدیریت وضعیت‌های پروژه در طول اجرا - حالت قالب | نوع مرورگر | ...
 ├── public/               # فایل‌های استاتیک
 ├── package.json          # وابستگی‌ها و اسکریپت‌ها
 ├── tailwind.config.js    # پیکربندی TailwindCSS
