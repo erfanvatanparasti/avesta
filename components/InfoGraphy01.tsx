@@ -4,7 +4,7 @@ import Image from 'next/image';
 import React from 'react';
 
 export default function InfoGraphy(props: any){
-     const {theme} = useTheme();
+  const {theme}:any = useTheme();
      return (
       <div className={`${props.className??''} infography`}>
         <div>

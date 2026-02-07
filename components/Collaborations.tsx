@@ -12,9 +12,11 @@ import { useEffect, useState } from 'react';
 
 export default function Collaborations(props: any){
   const deviceType = useDeviceType();
-  const {theme} = useTheme();
-  const [themeLogo, setThemeLogo] = useState('light');
+  const {theme}: any = useTheme();
+  const [themeLogo, setThemeLogo] = useState<string>('light');
   useEffect(() => {
+    console.log('theme type:', typeof theme); // چک کنید
+    console.log('theme value:', theme); // مقدارش رو ببینید
     setThemeLogo(theme);
   }, [theme])
      return (

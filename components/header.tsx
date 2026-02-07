@@ -8,7 +8,7 @@ import { useDeviceType } from '@/context/useDeviceType';
 
 export default function Header(props: any) {
   const deviceType = useDeviceType();
-  const {theme} = useTheme();
+  const {theme}:any = useTheme();
   const hamburegerRef = useRef(null);
   const [hamburger_status, setHamburgerStatus] = useState(false)
   const [menuType, setMenuType] = useState(false)
@@ -32,14 +32,12 @@ export default function Header(props: any) {
     };
   },[hamburger_status, deviceType]);
   return (<>
-      <span className={`menu-screen ${(hamburger_status || (!hamburger_status && servicesMenu))?'z-10':'z-0'}`} style={(hamburger_status || (!hamburger_status && servicesMenu))? {opacity: 0.8, zIndex: 10}: {opacity: 0, zIndex: 0, display: "none"}} onKeyUp={(e:KeyboardEvent) => {
-        console.log(e)
-      }} onClick={() => {
+      <span className={`menu-screen ${(hamburger_status || (!hamburger_status && servicesMenu))?'z-10':'z-0'}`} style={(hamburger_status || (!hamburger_status && servicesMenu))? {opacity: 0.8, zIndex: 10}: {opacity: 0, zIndex: 0, display: "none"}} onClick={() => {
         setServicesMenu(false)
         setHamburgerStatus(false)
       }}></span>
       <nav className={`${props.className} ${servicesMenu? 'dark:bg-dark-radial z-10': ''} header-menu`} dir="rtl">
-        <Image className="logo-menu" src={`/imgs/logo${theme == "dark"? '-dark':''}.png`} alt="Logo" width={66} height={42} alt="اوستا | مدیریت هوشمند لجستیک و حمل‌ونقل کالا"/>
+        <Image className="logo-menu" src={`/imgs/logo${theme == "dark"? '-dark':''}.png`} width={66} height={42} alt="اوستا | مدیریت هوشمند لجستیک و حمل‌ونقل کالا"/>
         {!menuType && <ul className="menu-desktop z-25">
           <li><Link className="menu-item" href="/">صفحه اصلی</Link></li>
           <li className="relative">

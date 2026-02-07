@@ -1,7 +1,7 @@
 "use client"
 import { useTheme } from '@/context/ThemeContext';
 export default function Achievements(props: any){
-     const {theme} = useTheme();
+  const {theme}:any = useTheme();
      return (
       <div className={`${props.className??''} achievements-numbers`}>
         <div>

@@ -5,7 +5,7 @@ import { createContext, useContext, useEffect, useState } from 'react';
 const ThemeContext = createContext({});
 
 export function ThemeProvider({ children }: {children : React.ReactNode}) {
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState<string>('light');
 
   useEffect(() => {
     // Check localStorage for saved theme

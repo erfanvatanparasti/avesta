@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 
 
 export default function Features(props: any){
-  const {theme} = useTheme();
+  const {theme}:any = useTheme();
   const [themeIcon, setThemeIcon] = useState('light');
   useEffect(() => {
     setThemeIcon(theme);

@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer>
       <div className="footer-logo">
-        <Image src="/imgs/logo.svg" alt="Logo" width={138} height={76} alt="اوستا | مدیریت هوشمند لجستیک و حمل‌ونقل کالا"/>
+        <Image src="/imgs/logo.svg" width={138} height={76} alt="اوستا | مدیریت هوشمند لجستیک و حمل‌ونقل کالا"/>
       </div>
       <div className="footer-columns">
         <div className="footer-menu">
