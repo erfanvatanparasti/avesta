@@ -13,18 +13,18 @@ export default function ThemeToggle(props) {
   }, []);
   useEffect(() => {
     setTimeout(() => {
-      // new DotWave({
-      //   container: '#main',
-      //   dotColor: localStorage.theme === "light"? "#000000A0" : '#ffffffA0',
-      //   backgroundColor: 'transparent',
-      //   numDots: 50,
-      //   dotMinSize: 1,
-      //   dotMaxSize: 2,
-      //   randomFactor: 0.1,
-      //   dotStretch: false,
-      //   rotSmoothing: false,
-      //   reactive: true
-      // });
+      new DotWave({
+        container: '#main',
+        dotColor: localStorage.theme === "light"? "#000000A0" : '#ffffffA0',
+        backgroundColor: 'transparent',
+        numDots: 50,
+        dotMinSize: 1,
+        dotMaxSize: 2,
+        randomFactor: 0.1,
+        dotStretch: false,
+        rotSmoothing: false,
+        reactive: true
+      });
     }, 2000);
   }, [theme]);
 
