@@ -487,7 +487,7 @@ button{
   .hambureger-menu{
     @apply fixed top-20 left-2 minitablet:left-8 z-10 text-primary text-BodyL max-w-[340px] minitablet:max-w-[500px] w-full leading-8 bg-bg-primary rounded-lg  p-4 cursor-pointer transition
   }
-  .hambureger-menu li {
+  .hambureger-menu li { 
     @apply transition hover:translate-x-2 hover:text-orange
   }
   .hambureger-menu li ol{
