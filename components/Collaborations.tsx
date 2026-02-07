@@ -18,31 +18,31 @@ export default function Collaborations(props: any){
     setThemeLogo(theme);
   }, [theme])
      return (
-      <div className={`${props.className} my-5 px-5 w-full bg-[#F5F0FB] bg-[url("/imgs/collaborations-bg.png")] dark:bg-[url("/imgs/collaborations-bg-dark.jpg")]`} id="collaborations">
-        <Swiper slidesPerView={deviceType == "mobile" ? 1: 3} className='items-center max-w-7xl w-full mx-auto' autoplay={true} modules={[Navigation, Scrollbar, A11y]} dir='ltr' centeredSlides={deviceType === "mobile"? true: false}>
-          <SwiperSlide key={1} className="item mx-auto p-2">  
-            <Image className='mx-auto' src={`/imgs/1${themeLogo}.png`} width={250} height={150} alt=""/>
+      <div className={`${props.className} collaborations`} id="collaborations">
+        <Swiper slidesPerView={deviceType == "mobile" ? 1: 3} autoplay={true} modules={[Navigation, Scrollbar, A11y]} dir='ltr' centeredSlides={deviceType === "mobile"? true: false}>
+          <SwiperSlide key={1}>  
+            <Image src={`/imgs/1${themeLogo}.png`} width={250} height={150} alt=""/>
           </SwiperSlide>
-          <SwiperSlide key={2} className="item mx-auto p-2">
-            <Image className='mx-auto' src={`/imgs/2${themeLogo}.png`} width={250} height={150} alt=""/>
+          <SwiperSlide key={2}>
+            <Image src={`/imgs/2${themeLogo}.png`} width={250} height={150} alt=""/>
           </SwiperSlide>
-          <SwiperSlide key={3} className="item mx-auto p-2">
-            <Image className='mx-auto' src={`/imgs/3${themeLogo}.png`} width={250} height={150} alt=""/>
+          <SwiperSlide key={3}>
+            <Image src={`/imgs/3${themeLogo}.png`} width={250} height={150} alt=""/>
           </SwiperSlide>
-          <SwiperSlide key={4} className="item mx-auto p-2">
-            <Image className='mx-auto' src={`/imgs/4${themeLogo}.png`} width={250} height={150} alt=""/>
+          <SwiperSlide key={4}>
+            <Image src={`/imgs/4${themeLogo}.png`} width={250} height={150} alt=""/>
           </SwiperSlide>
-          <SwiperSlide key={8} className="item mx-auto p-2">
-            <Image className='mx-auto' src={`/imgs/2${themeLogo}.png`} width={250} height={150} alt=""/>
+          <SwiperSlide key={8}>
+            <Image src={`/imgs/2${themeLogo}.png`} width={250} height={150} alt=""/>
           </SwiperSlide>
-          <SwiperSlide key={5} className="item mx-auto p-2">
-            <Image className='mx-auto' src={`/imgs/5${themeLogo}.png`} width={250} height={150} alt=""/>
+          <SwiperSlide key={5}>
+            <Image src={`/imgs/5${themeLogo}.png`} width={250} height={150} alt=""/>
           </SwiperSlide>
-          <SwiperSlide key={6} className="item mx-auto p-2">
-            <Image className='mx-auto' src={`/imgs/6${themeLogo}.png`} width={250} height={150} alt=""/>
+          <SwiperSlide key={6}>
+            <Image src={`/imgs/6${themeLogo}.png`} width={250} height={150} alt=""/>
           </SwiperSlide>
-          <SwiperSlide key={7} className="item mx-auto p-2">
-            <Image className='mx-auto' src={`/imgs/2${themeLogo}.png`} width={250} height={150} alt=""/>
+          <SwiperSlide key={7}>
+            <Image src={`/imgs/2${themeLogo}.png`} width={250} height={150} alt=""/>
           </SwiperSlide>
         </Swiper>
       </div>

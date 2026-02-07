@@ -52,21 +52,21 @@ export default function Certificates(props: any){
     }, []);
 
      return (
-      <div className={`my-5 px-5 pt-12 pb-8 tablet:pt-24 tablet:pb-16 rounded-xl w-full max-w-7xl mx-auto ${props.className} bg-bg-secondry dark:bg-dark-radial dark:bg-[unset]`} id="certificates">
-        <div className="flex flex-wrap tablet:flex-nowrap w-full max-w-6xl h-full tablet:max-h-[550px] rounded-xl bg-[#E0D2F3] dark:bg-[unset] dark:bg-dark-radial p-4 minitablet:p-8 tablet:p-16 mx-auto items-center shadow-lg">
-          <div className="basis-full tablet:basis-3/5 pb-8 pl-0 minitablet:p-4">
-            <h3 className='text-HeadingMx tablet:text-HeadingMx font-medium py-5 text-center tablet:text-right w-full'>بخشی از گواهینامه‌ها و افتخارات اوستاهوش‌یار</h3>
-            <h3 className="text-HeadingM font-medium text-black02 dark:text-white pb-5 text-center tablet:text-right">{certificates[current]?.title}</h3>
-            <p className='text-justify max-w-xl mx-auto tablet:mx-0'>{certificates[current]?.text}</p>
+      <div className={`${props.className} certificates`} id="certificates">
+        <div className='certificate'>
+          <div className="certificate-content">
+            <h3 className='section-title'>بخشی از گواهینامه‌ها و افتخارات اوستاهوش‌یار</h3>
+            <h3 className="certificate-title">{certificates[current]?.title}</h3>
+            <p className='certificate-description'>{certificates[current]?.text}</p>
           </div>
-          <div className='basis-full tablet:basis-2/5' id='certificate'>
-            {certificates[current] && <Image src={`/imgs/certificates/${certificates[current].image}`} width={100} height={100} alt={certificates[current].title} className='rounded-3xl shadow-xl w-full max-w-[300px] tablet:max-w-[450px]'/>}
-            <Image className='max-w-full scale-0 tablet:scale-1 pattern' src="/imgs/bg-ellipse-03.svg" alt="" width={100} height={100}/>
+          <div className='certificate-media'>
+            {certificates[current] && <Image src={`/imgs/certificates/${certificates[current].image}`} width={500} height={500} alt={certificates[current].title}/>}
+            {/* <Image className='pattern' src="/imgs/bg-ellipse-03.svg" alt="" width={100} height={100}/> */}
           </div>
         </div>
-        <Swiper slidesPerView={deviceType == "mobile" ? 2: 4} className='mt-24 w-full max-w-7xl mx-auto cursor-pointer' spaceBetween={16} navigation={true} autoplay={true} centeredSlides={deviceType === "mobile"? true: false} dir='ltr'>
-          {certificates.map((certificate: any, i: number) => <SwiperSlide key={i} onClick={() => setCurrent(i)} className="item m-2 p-2 mx-auto">
-            <Image src={`/imgs/certificates/${certificate.image}`} width={100} alt={certificate.title} height={100} />
+        <Swiper slidesPerView={deviceType == "mobile" ? 2: 4} spaceBetween={16} navigation={true} autoplay={true} centeredSlides={deviceType === "mobile"? true: false} dir='ltr'>
+          {certificates.map((certificate: any, i: number) => <SwiperSlide key={i} onClick={() => setCurrent(i)}>
+            <Image src={`/imgs/certificates/${certificate.image}`} width={200} alt={certificate.title} height={200} />
           </SwiperSlide>
         )}
         </Swiper>

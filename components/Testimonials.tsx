@@ -42,7 +42,7 @@ export default function Testimonials(props: any){
             </SwiperSlide>
             ))}
       </Swiper>:
-      <Swiper slidesPerView={deviceType == "mobile" ? 1: 2.5} className='mx-auto w-full' autoplay={true} centeredSlides={deviceType === "mobile"? true: false} navigation={true} pagination={true} modules={[Pagination, A11y]} dir='ltr'>
+      <Swiper slidesPerView={(deviceType == "mobile" || deviceType == "minitablet") ? 1: 2.5} className='mx-auto w-full' autoplay={true} centeredSlides={deviceType === "mobile"? true: false} navigation={true} pagination={true} modules={[Pagination, A11y]} dir='ltr'>
         {testimonials.map((testimonial: any, i: number) => <SwiperSlide key={i} className="item mx-auto p-3">  
           <div className="flex flex-col items-center justify-center bg-[#E4D8F488] dark:bg-[unset] dark:bg-dark-radial-02 p-3 rounded-2xl border-r-[1px] border-[#C17BFF]">
             <div className="cart-title flex items-center ml-auto mr-0 border-b-[1px] border-primary" dir='rtl'>

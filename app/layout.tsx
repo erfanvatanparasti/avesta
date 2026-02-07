@@ -22,7 +22,8 @@ export const metadata: Metadata = {
   title: "اَوستا هوش‌یار | خدمات پیشرفته حمل و نقل کالا و لجستیک",
   description: "اوستا، سامانه‌ای برای مدیریت هوشمند لجستیک و حمل‌ونقل کالا با خدمات پیشرفته در سراسر کشور.",
 };
-
+import logo from "@/public/imgs/logo.svg";
+import Image from "next/image";
 export default async function RootLayout({
   children,
 }: Readonly<{
@@ -37,11 +38,10 @@ export default async function RootLayout({
         <script src="/js/dotwave-element.min.js"></script> 
         <script src="/js/script.js" defer></script>
       </head>
-      <body className="bg-bg-primary dark:bg-black dark:text-white text-primary">
+      <body>
       <ThemeProvider>
         <DeviceProvider serverInfo={serverDevice}>
-
-          <Header className="py-3 max-w-7xl"/>
+          <Header/>
           {children}
           <Footer/>
         </DeviceProvider>

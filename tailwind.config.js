@@ -64,6 +64,11 @@ module.exports = {
       }
     },
   },
+  variants: {
+    extend: {
+      direction: ['responsive'], // This enables responsive variants for direction utilities
+    },
+  },
   plugins: [
     require('@tailwindcss/forms'),
     require('@tailwindcss/container-queries'), // Add this
