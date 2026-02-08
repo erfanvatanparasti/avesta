@@ -3,7 +3,7 @@
 import { useTheme } from '@/context/ThemeContext';
 import { useEffect, useState } from 'react';
 
-export default function ThemeToggle(props) {
+export default function ThemeToggle(props: any) {
   const { theme, toggleTheme } : any = useTheme();
   const [mounted, setMounted] = useState(false);
 
