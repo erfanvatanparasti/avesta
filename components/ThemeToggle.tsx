@@ -4,7 +4,7 @@ import { useTheme } from '@/context/ThemeContext';
 import { useEffect, useState } from 'react';
 
 export default function ThemeToggle(props) {
-  const { theme, toggleTheme } = useTheme();
+  const { theme, toggleTheme }: any = useTheme();
   const [mounted, setMounted] = useState(false);
 
   // Avoid hydration mismatch by rendering only on client

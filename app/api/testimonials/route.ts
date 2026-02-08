@@ -1,3 +1,13 @@
+/**
+ * @swagger
+ * /api/testimonials:
+ * 
+ *   get:
+ *     description: Returns top testimonials have been registered
+ *     responses:
+ *       200:
+ *         description: Hello Avesta!
+ */
 import { NextRequest, NextResponse } from "next/server";
 import { TestimonialService } from "@/services/testimonialService";
 

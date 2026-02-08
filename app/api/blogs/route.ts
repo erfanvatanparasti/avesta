@@ -1,3 +1,13 @@
+/**
+ * @swagger
+ * /api/blogs:
+ * 
+ *   get:
+ *     description: Returns the hello world
+ *     responses:
+ *       200:
+ *         description: Hello World!
+ */
 import { NextRequest, NextResponse } from "next/server";
 import { BlogService } from "@/services/blogService";
 
