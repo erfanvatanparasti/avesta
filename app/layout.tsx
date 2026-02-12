@@ -22,14 +22,12 @@ export const metadata: Metadata = {
   title: "اَوستا هوش‌یار | خدمات پیشرفته حمل و نقل کالا و لجستیک",
   description: "اوستا، سامانه‌ای برای مدیریت هوشمند لجستیک و حمل‌ونقل کالا با خدمات پیشرفته در سراسر کشور.",
 };
-import logo from "@/public/imgs/logo.svg";
-import Image from "next/image";
 export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const ua = (await headers()).get('user-agent');  // <-- no await
+  const ua = (await headers()).get('user-agent'); 
   const serverDevice = parseUserAgent(ua);
   return (
     <html lang="en" dir="rtl" className={` ${iranyekanFont.className}`}>
